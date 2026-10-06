@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+logs/*.jsonl

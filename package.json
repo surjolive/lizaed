@@ -1,0 +1,37 @@
+{
+  "name": "lizaed",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Intelligent Zonal AI Execution & Desktop Assistant",
+  "main": "dist/electron/main.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && tsc -p tsconfig.electron.json && vite build",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.electron.json --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "package": "npm run build && electron-builder",
+    "backend": "python -m backend.service",
+    "backend:check": "python -m compileall backend"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.2"
+  },
+  "build": {
+    "appId": "com.lizaed.desktop",
+    "productName": "LIZAED",
+    "directories": { "output": "release" },
+    "files": ["dist/**/*", "package.json"],
+    "win": { "target": "nsis" }
+  }
+}

@@ -1,0 +1,2 @@
+# Phase 1 intentionally uses the Python standard library only.
+# Future optional groups may add FastAPI, psutil, OpenCV, Whisper, and Playwright.
